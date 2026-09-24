@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caso: tres adultos, un niño</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <p class="expediente">Juzgado · Código Civil y Comercial</p>
+    <h1>Caso: tres adultos, un niño</h1>
+    <p class="etapa" id="etapa-label">Antes de la audiencia</p>
+  </header>
+
+  <main>
+    <section class="escena" id="escena" aria-label="Sala de audiencias">
+      <img src="imagen/image_de5138d2.jpg" alt="Sala de audiencias: el juez al centro, la secretaria a la izquierda, el abogado de pie y la parte a la derecha.">
+      <div class="globo oculto" id="globo" role="status">
+        <p class="globo-nombre" id="globo-nombre"></p>
+        <p class="globo-texto" id="globo-texto"></p>
+        <button type="button" class="globo-seguir" id="globo-seguir">Seguir</button>
+      </div>
+    </section>
+
+    <section class="opciones oculto" id="opciones" aria-labelledby="pregunta">
+      <h2 id="pregunta"></h2>
+      <div class="lista-opciones" id="lista-opciones"></div>
+    </section>
+  </main>
+
+  <dialog class="modal" id="modal-inicio">
+    <p class="modal-kicker">Apertura del expediente</p>
+    <h2>Caso: tres adultos, un niño</h2>
+    <p>Una pareja y una mujer gestante quieren que el niño tenga tres vínculos filiales. El Código Civil y Comercial regula la filiación. ¿Qué artículos ayudan a entender el caso?</p>
+    <button type="button" class="boton" id="comenzar">Comenzar investigación</button>
+  </dialog>
+
+  <dialog class="modal" id="modal-correccion">
+    <p class="modal-kicker" id="correccion-kicker"></p>
+    <h2 id="correccion-titulo"></h2>
+    <div id="correccion-lineas"></div>
+    <button type="button" class="boton" id="elegir-de-nuevo">Elegir de nuevo</button>
+  </dialog>
+
+  <dialog class="modal" id="modal-cierre">
+    <p class="modal-kicker">Expediente revisado</p>
+    <h2>La audiencia queda en el acta</h2>
+    <p>Leíste el límite de dos vínculos, la regla de la reproducción asistida y la perspectiva de derechos del niño. El grupo ya dijo lo suyo.</p>
+    <button type="button" class="boton" id="reiniciar">Volver a investigar</button>
+  </dialog>
+
+  <script src="js/caso.js"></script>
+</body>
+</html>
