@@ -7,27 +7,72 @@
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <header class="encabezado">
-    <p class="expediente">Juzgado · Código Civil y Comercial</p>
-    <h1>Caso: tres adultos, un niño</h1>
-    <p class="etapa" id="etapa-label">Antes de la audiencia</p>
-  </header>
-
-  <main>
-    <section class="escena" id="escena" aria-label="Sala de audiencias">
-      <img src="imagen/image_de5138d2.jpg" alt="Sala de audiencias: el juez al centro, la secretaria a la izquierda, el abogado de pie y la parte a la derecha.">
-      <div class="globo oculto" id="globo" role="status">
-        <p class="globo-nombre" id="globo-nombre"></p>
-        <p class="globo-texto" id="globo-texto"></p>
-        <button type="button" class="globo-seguir" id="globo-seguir">Seguir</button>
+  <div class="marco">
+    <aside class="barra" aria-label="Recursos del grupo">
+      <div id="lista-recursos" class="oculto">
+        <p class="barra-titulo">Recursos</p>
+        <button type="button" class="boton-barra" data-recurso="logo">El logo</button>
+        <button type="button" class="boton-barra" data-recurso="imagen">La imagen representativa</button>
+        <button type="button" class="boton-barra" data-recurso="conclusion">La conclusión final</button>
+        <button type="button" class="boton-barra boton-barra-claro" id="reiniciar">Volver a investigar</button>
       </div>
-    </section>
+    </aside>
 
-    <section class="opciones oculto" id="opciones" aria-labelledby="pregunta">
-      <h2 id="pregunta"></h2>
-      <div class="lista-opciones" id="lista-opciones"></div>
-    </section>
-  </main>
+    <div class="columna">
+      <header class="encabezado">
+        <p class="expediente">Juzgado · Código Civil y Comercial</p>
+        <h1>Caso: tres adultos, un niño</h1>
+        <p class="etapa" id="etapa-label">Antes de la audiencia</p>
+      </header>
+
+      <main>
+        <section class="escena" id="escena" aria-label="Sala de audiencias">
+          <img src="imagen/image_de5138d2.jpg" alt="Sala de audiencias: el juez al centro, la secretaria a la izquierda, el abogado de pie y la parte a la derecha.">
+          <div class="globo oculto" id="globo" role="status">
+            <p class="globo-nombre" id="globo-nombre"></p>
+            <p class="globo-texto" id="globo-texto"></p>
+          </div>
+        </section>
+
+        <section class="opciones oculto" id="opciones" aria-labelledby="pregunta">
+          <h2 id="pregunta"></h2>
+          <div class="lista-opciones" id="lista-opciones"></div>
+        </section>
+      </main>
+    </div>
+
+    <aside class="barra" aria-label="Audios del equipo">
+      <p class="barra-titulo">Audios del equipo</p>
+      <div id="lista-audios"></div>
+    </aside>
+  </div>
+
+  <section class="capa" id="presentacion">
+    <div class="tarjeta-presentacion">
+      <img src="imagen/LOGO/LOGO.jpeg" alt="Logo de Código Rojo: un equipo alrededor de un libro abierto.">
+      <p class="presenta">Código rojo presenta...</p>
+      <h2>Caso: tres adultos, un niño</h2>
+    </div>
+  </section>
+
+  <section class="capa oculto" id="panel-conclusion" aria-labelledby="titulo-conclusion">
+    <article class="tarjeta-texto">
+      <p class="modal-kicker">Conclusión del grupo</p>
+      <h2 id="titulo-conclusion">Por qué elegimos esta noticia</h2>
+      <p>Como grupo, elegimos esta noticia porque consideramos que se relaciona directamente con los cambios de paradigma introducidos por la Ley 26.994 y con la forma en que el Derecho Civil y Comercial se adapta a las nuevas realidades sociales.</p>
+      <p>Al momento de elegirla, hubo opiniones a favor y algunas disidencias. Algunos integrantes consideraban que la nota abordaba demasiados temas, mientras que otros destacaron que justamente esa variedad permitía comprender mejor los cambios. Finalmente, llegamos a un acuerdo y decidimos utilizarla porque nos permite reflexionar sobre cómo el nuevo Código pone mayor énfasis en la persona, sus derechos y las transformaciones de la sociedad.</p>
+    </article>
+  </section>
+
+  <section class="capa oculto" id="panel-imagen" aria-labelledby="leyenda-imagen">
+    <figure class="tarjeta-imagen">
+      <img src="imagen/Imagen%20representativa.jpeg" alt="Del Código Civil de 1869 al Código Civil y Comercial de 2015.">
+      <figcaption id="leyenda-imagen">Esta imagen representa para nosotros el cambio del Código Civil y Comercial.</figcaption>
+    </figure>
+  </section>
+
+  <button type="button" class="siguiente" id="siguiente">Siguiente</button>
+  <button type="button" class="siguiente oculto" id="cerrar-recurso">Cerrar</button>
 
   <dialog class="modal" id="modal-inicio">
     <p class="modal-kicker">Apertura del expediente</p>
@@ -43,12 +88,6 @@
     <button type="button" class="boton" id="elegir-de-nuevo">Elegir de nuevo</button>
   </dialog>
 
-  <dialog class="modal" id="modal-cierre">
-    <p class="modal-kicker">Expediente revisado</p>
-    <h2>La audiencia queda en el acta</h2>
-    <p>Leíste el límite de dos vínculos, la regla de la reproducción asistida y la perspectiva de derechos del niño. El grupo ya dijo lo suyo.</p>
-    <button type="button" class="boton" id="reiniciar">Volver a investigar</button>
-  </dialog>
 
   <script src="js/caso.js"></script>
 </body>
